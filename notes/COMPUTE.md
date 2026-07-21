@@ -47,3 +47,73 @@
 - ECS on EC2 allows mixing Reserved and Spot Instances.
 - Use IAM Roles for Tasks for container isolation.
 - AWS Fargate enables container execution without managing EC2 servers.
+
+---
+
+# EC2 Placement Groups
+
+Placement Groups influence performance, fault tolerance, and availability of EC2 workloads.
+
+## Cluster Placement Group
+
+### Characteristics
+- Instances are located close together within a single Availability Zone.
+- Designed for very low network latency and high network throughput.
+
+### Best Use Cases
+- High Performance Computing (HPC)
+- Machine Learning workloads
+- Scientific simulations
+- Low-latency distributed systems
+
+### Primary Goal
+- Maximum performance.
+
+---
+
+## Partition Placement Group
+
+### Characteristics
+- Instances are distributed across logical partitions.
+- Each partition has isolated networking, power, and hardware resources.
+
+### Best Use Cases
+- Hadoop
+- Kafka
+- Cassandra
+- Large distributed data-processing systems
+
+### Primary Goal
+- Performance with fault isolation at scale.
+
+---
+
+## Spread Placement Group
+
+### Characteristics
+- Each instance is placed on distinct underlying hardware.
+- Minimizes the risk of simultaneous hardware failures.
+
+### Best Use Cases
+- Mission-critical applications
+- High-availability architectures
+- Small groups of sensitive workloads
+
+### Primary Goal
+- Maximum availability and fault tolerance.
+
+---
+
+## Placement Group Summary
+
+| Placement Group | Primary Goal | Placement Strategy | Best For |
+|----------------|-------------|-------------------|----------|
+| Cluster | Performance | Instances close together in one AZ | HPC, ML, low-latency applications |
+| Partition | Fault Isolation + Performance | Separate partitions | Hadoop, Kafka, Cassandra |
+| Spread | Availability | Separate hardware per instance | Critical workloads, HA systems |
+
+### Quick Rule of Thumb
+
+- **Cluster** = Maximum Performance
+- **Partition** = Performance + Fault Isolation
+- **Spread** = Maximum Availability
