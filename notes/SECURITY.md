@@ -34,3 +34,12 @@
 ### Data in Transit
 - SecureTransport bucket policies
 - ACM Certificates
+
+---
+
+## Networking & Security
+
+### Network ACLs (NACLs)
+- NACLs are commonly used to block unwanted traffic at the subnet level.
+- Since NACLs are stateless, rules must be configured in both inbound and outbound directions.
+- NACLs are often preferred when explicit deny rules are required.
