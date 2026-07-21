@@ -16,3 +16,13 @@
 
 ## CloudSearch
 - Provides full-text search for data stored in S3.
+
+---
+
+## Amazon Redshift Enhanced VPC Routing
+
+### Benefits
+- Forces traffic between Redshift and other AWS services to stay within the VPC network.
+- Improves security posture by avoiding unnecessary public network traversal.
+- Commonly used with Amazon S3 for secure COPY and UNLOAD operations.
+- Helps organizations meet network security and compliance requirements.
